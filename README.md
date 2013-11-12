@@ -37,7 +37,7 @@ c . Select the host in the combobox and zoom the local of host
 
 1. INSTALLATION AT GUIDE MONITORING
 
-1.1 Create the extras directory and unpack the tarball at zabbix folder :
+1.1 Create the extras directory and unpack the tarball at zabbix folder
 
 # cd /var/www/html/zabbix
 # mkdir extras
@@ -47,13 +47,13 @@ c . Select the host in the combobox and zoom the local of host
 # cd zabbix-geolocalizacao-v0.3.2
 # cp geolocation/misc/geolocation.php /var/www/html/zabbix
 
-Set the directory permissions with the same user/group from zabbix, for example:
+Set the directory permissions with the same user/group from zabbix, for example
 
 # cd ../..
 # chown -R apache.apache extras
 
 
-1.2 Creating the menu item :
+1.2 Creating the menu item
 
 Edit the file ../zabbix/include/menu.inc.php
 
@@ -68,7 +68,7 @@ array(
     'sub_pages' => array('report3.php','chart5.php')
     ),
 
-After the excerpt above includes the code below :
+After the excerpt above includes the code below
 
 array(
     'url' => 'geolocation.php',
@@ -94,7 +94,7 @@ short_open_tag=On
 Save the file and restart apache
 
 
-1.3 Defining Default Group :
+1.3 Defining Default Group
 
 To set the default host group, change the line group in file ../zabbix/extras/geolocation/geolocation.conf
 informing the id of the desired Group.
@@ -115,7 +115,7 @@ Click Save.
 
 Now click in Geolocation in the list of screens.
 
-Click Change to include the URL of geolocation:
+Click Change to include the URL of geolocation
 
 Resource: url
 Url: http://IP-ou-Hostname-Zabbix/zabbix/extras/geolocation/index.php
@@ -151,7 +151,7 @@ Now repeat the process for all other hosts and return to Geolocation menu.
 The fping must be installed.
 
 Tip of Daniel Schaeffer :
-How to install fping for anyone who uses CentOS or RedHat :
+How to install fping for anyone who uses CentOS or RedHat
 http://www.tecmint.com/install-fping-icmp-program-on-rhel-centos-6-5-4/
 
 

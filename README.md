@@ -39,25 +39,25 @@ c . Select the host in the combobox and zoom the local of host
 
 1.1 Create the extras directory and unpack the tarball at zabbix folder
 
-# cd /var/www/html/zabbix
-# mkdir extras
-# cd extras
-# cp /<path_download>/zabbix-geolocation-v0.3.2.tar.gz .
-# tar zxvf zabbix-geolocation-v0.3.2.tar.gz
-# cd zabbix-geolocalizacao-v0.3.2
-# cp geolocation/misc/geolocation.php /var/www/html/zabbix
+cd /var/www/html/zabbix
+mkdir extras
+cd extras
+cp /<path_download>/zabbix-geolocation-v0.3.2.tar.gz .
+tar zxvf zabbix-geolocation-v0.3.2.tar.gz
+cd zabbix-geolocalizacao-v0.3.2
+cp geolocation/misc/geolocation.php /var/www/html/zabbix
 
 Set the directory permissions with the same user/group from zabbix, for example
 
-# cd ../..
-# chown -R apache.apache extras
+cd ../..
+chown -R apache.apache extras
 
 
 1.2 Creating the menu item
 
 Edit the file ../zabbix/include/menu.inc.php
 
-# vi ../include/menu.inc.php
+vi ../include/menu.inc.php
 
 Locate the line: 'label' => _('IT services') contained in the excerpt of code below, at the Monitoring menu:
 
@@ -88,7 +88,7 @@ The items in red are the hosts that have an incident.
 
 Edit the php.ini file , usually /etc/php.ini and uncomment the option short_open_tag to leaving the flag On
 
-# vi /etc/php.ini
+vi /etc/php.ini
 
 short_open_tag=On
 Save the file and restart apache

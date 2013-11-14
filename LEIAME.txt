@@ -22,6 +22,7 @@ Nova característica:
 
 
 
+
 Geolocalização vrs 0.3.1 (versão Sapucaí)
 Carnaval - Fevereiro de 2013 - http://www.aristoteles.eti.br/zabbix/zabbix-geolocalizacao-v0.3.tar.gz
 Download Tarball vrs0.3.1

@@ -1,0 +1,173 @@
+Geolocalização vrs0.3.3 (versão Kanindé)
+Grande tribo de Tarairius, que vivia na região central do Ceará pelo sertões de Quixadá, Canindé e Alto Banabuiú (Quixeramobim) - Setembro de 2013
+fonte: pt.wikipedia.org
+
+Novas características:
+* Permite inclusão de camadas com arquivo .KMZ
+* Implementação de Overlapping Marker Spiderfier, para expandir hosts sobrepostos
+
+Info: Alteração no modo de fazer zoom: 
+Zoom in -> duplo clique botão esquerdo
+Zoom out -> duplo clique botão direito
+
+
+
+Geolocalização vrs0.3.2 (versão Kariri)
+Dia Internacional dos Povos Indígenas - Agosto de 2013
+Download Tarball vrs0.3.2 - http://www.aristoteles.eti.br/zabbix/zabbix-geolocalizacao-v0.3.2.tar.gz
+
+Nova característica:
+* suporte ao PostgreSQL
+
+
+
+
+
+Geolocalização vrs 0.3.1 (versão Sapucaí)
+Carnaval - Fevereiro de 2013 - http://www.aristoteles.eti.br/zabbix/zabbix-geolocalizacao-v0.3.tar.gz
+Download Tarball vrs0.3.1
+
+Contatos:
+Leandro Alves Machado - leandro.machado@sspds.ce.gov.br
+Aristóteles Araújo - aristoteles.araujo@sspds.ce.gov.br
+
+
+Vantagens do uso do plugin:
+
+a. Reduz o tempo de criação de uma mapa, pois não é necessário colocar uma imagem de fundo e adicionar/configurar todos os hosts.
+b. A imagem é dinâmica, permitindo zoom e demais recursos do Google Maps
+c. Seleciona o host no combobox e faz zoom do local do host
+
+
+1. INSTALAÇÃO NA GUIA MONITORAMENTO
+
+1.1 Crie o diretório extras e descompacte o tarball na pasta zabbix:
+
+# cd /var/www/html/zabbix
+# mkdir extras
+# cd extras
+# cp /<path_download>/zabbix-geolocalizacao-v0.3.2.tar.gz .
+# tar zxvf zabbix-geolocalizacao-v0.3.2.tar.gz
+# cp /geolocation/misc/geolocation.php /var/www/html/zabbix
+
+Defina as permissões do diretório com o mesmo usuário/grupo do zabbix,por exemplo:
+
+#cd ..
+#chown -R apache.apache extras
+
+
+1.2 Criando item no menu:
+
+Editar o arquivo ../zabbix/include/menu.inc.php
+
+# vi ../include/menu.inc.php
+
+Localize a linha: 'label' => _('IT services'), contida no trecho de 
+código abaixo, no menu Monitoring:
+
+array(
+'url' => 'srv_status.php',
+    'label' => _('IT services'),
+    'force_disable_all_nodes' => true,
+    'sub_pages' => array('report3.php', 'chart5.php')
+    ),
+
+Após o trecho acima inclua o código abaixo:
+
+array(
+    'url' => 'geolocation.php',
+    'label' => _('Geolocalização')
+    ),
+
+Salve o arquivo. 
+
+Esta alteração cria o link Geolocalização no menu de Monitoramento.
+Clique em Monitoramento -> Geolocalização para ter acesso a interface.
+
+Na interface tem duas ComboBox, na primeira estão os Grupos de Hosts e 
+na segunda a Lista de Hosts pertencentes ao grupo selecionado. 
+Os itens em vermelho, são os hosts que apresentam algum incidente. 
+
+1.2 Configurar php.ini:
+
+Edite o arquivo php.ini, normalmente em /etc/php.ini, e descomente a opção short_open_tag deixando a flag como On
+
+#vi /etc/php.ini
+
+short_open_tag=On
+Salve o arquivo e reinicie o apache
+
+
+1.3 Definindo Grupo Padrão:
+
+Para definir o Grupo de Hosts padrão, altere a linha group
+no arquivo ../zabbix/extras/geolocation/geolocation.conf 
+informando o id do Grupo desejado.
+
+group=1
+
+Uma forma de saber qual o id do Grupo é abrir a interface de 
+Geolocalização e olhar o número na frente do grupo desejado.
+
+
+
+2. INSTALAÇÃO NA GUIA DE TELAS, VIA URL
+
+Clique em Configurações -> Telas -> Criar Tela
+
+Nome: Geolocalização
+
+Clique em Salvar.
+
+Agora clique em Geolocalização, na lista de telas.
+
+Clique em Alterar para incluir a URL de geolocalização: 
+
+Recurso: url
+Url: http://IP-ou-Hostname-Zabbix/zabbix/extras/geolocation/index.php
+Largura: 1028
+Altura: 760
+Alinhamento horizontal: Centralizar
+Alinhamento vertical: Centro
+
+Clique em Salvar.
+
+Clique em Monitoramento -> Telas 
+Na combobox Telas, selecione: Geolocalização para acessar a interface.
+
+
+
+3. CADASTRAR/ALTERAR HOSTS PARA GEOLOCALIZAÇÃO
+
+Para que os host sejam exibidos no Mapa de Geolocalização é necessário 
+informar a latitude e a longitude dos mesmos. 
+Para isso clique em Configurações -> Hosts e selecione o host que deseja
+monitorar, entre na aba Inventário do host.
+Clique em Manual, preencha longitude e latitude e clique em Salvar.
+Agora repita o processo para todos os demais hosts e retorne ao menu
+de Geolocalização. 
+
+4. DEPENDÊNCIAS
+
+4.1 fping 
+O fping deve estar instalado 
+
+Dica do Daniel Schaeffer:
+Como instalar o fping para quem usa CentOS ou RedHat: 
+http://www.tecmint.com/install-fping-icmp-program-on-rhel-centos-6-5-4/
+
+
+4.2 MySQL ou PostgreSQL
+A versão atual funciona com MySQL ou PostgreSQL
+
+
+
+Bom trabalho a todos.
+
+8^)
+
+Aristóteles Rêgo de Araújo
+aristoteles.araujo@sspds.ce.gov.br
+aristoteles.araujo@gmail.com
+
+

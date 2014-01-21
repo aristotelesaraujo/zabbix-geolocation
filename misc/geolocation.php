@@ -21,6 +21,9 @@
 ** Leandro Alves Machado - Analista de Sistemas - leandro.machado@sspds.ce.gov.br
 ** Aristoteles Araujo - Analista de Sistemas - aristoteles.araujo@sspds.ce.gov.br
 **
+**
+** Colaborações:
+** Diones Fernandes <kestjones@gmail.com>
 **/
 ?>
 <?php

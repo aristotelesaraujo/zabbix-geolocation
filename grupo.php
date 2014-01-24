@@ -150,6 +150,10 @@ $(document).ready(function(){
 
 	<?php 
 		for ($i = 0; $i < $hosts->qtd_hosts; $i++) {
+		if ($hosts->ip[$i] == "") {
+                    $hosts->ip[$i]=gethostbyname($hosts->dns[$i]);
+                }
+
 	?>  
 			var ll = new google.maps.LatLng(<?=$hosts->lat[$i]?>, <?=$hosts->lon[$i]?>);
 			bounds.extend(ll);

@@ -21,6 +21,10 @@
 ** Leandro Alves Machado - Analista de Sistemas - leandro.machado@sspds.ce.gov.br
 ** Aristoteles Araujo - Analista de Sistemas - aristoteles.araujo@sspds.ce.gov.br
 **
+**
+** Colaboração: 
+** Helder Santana - helder.bs.santana@gmail.com
+**
 **/
 ?>
 <?php 
@@ -38,7 +42,10 @@ $grupo->conectar();
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Geolocaliza&ccedil;&atilde;o - SSPDS/CE</title>
 <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<!--
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>**/
+-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=weather"></script>
 <script type="text/javascript" src="js/markerwithlabel.js"></script>
 <script type="text/javascript" src="js/markerwithlabel_packed.js"></script>
 <script type="text/javascript" src="js/oms.min.js"></script>

@@ -7,6 +7,10 @@ Novas características:
 * Correção de bug para uso no menu do Zabbix 2.0
 * Repositório oficial agora no GitHub: https://github.com/aristotelesaraujo/zabbix-geolocation
 
+No arquivo geolocation.conf foi incluída a chave weather=[yes|no], 
+para ativar ou desativar a exibição de meteorologia.
+
+
 
 Geolocalização vrs0.3.3 (versão Kanindé)
 Grande tribo de Tarairius, que vivia na região central do Ceará pelo sertões de 

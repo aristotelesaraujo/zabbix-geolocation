@@ -1,5 +1,16 @@
+Geolocalização vrs0.3.3 (versão Tremembé)
+Os tremembés eram originalmente nômades que viviam num território que estendia-se 
+do sul do Maranhão até o Rio Acaraú, no atual estado do Ceará
+Novas características:
+* Mapa com meteorologia
+* Suporte a host com DNS
+* Correção de bug para uso no menu do Zabbix 2.0
+* Repositório oficial agora no GitHub: https://github.com/aristotelesaraujo/zabbix-geolocation
+
+
 Geolocalização vrs0.3.3 (versão Kanindé)
-Grande tribo de Tarairius, que vivia na região central do Ceará pelo sertões de Quixadá, Canindé e Alto Banabuiú (Quixeramobim) - Setembro de 2013
+Grande tribo de Tarairius, que vivia na região central do Ceará pelo sertões de 
+Quixadá, Canindé e Alto Banabuiú (Quixeramobim) - Setembro de 2013
 fonte: pt.wikipedia.org
 
 Novas características:

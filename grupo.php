@@ -39,7 +39,7 @@ while (!feof ($ponteiro)) {
 	$chave = substr($linha,0,$posIgual);
  	if ( $chave == "weather") {
 		$vChaveWeather = substr($linha,$posLinha+1+$posIgual);
-		echo $chave.'='.$vChaveWeather.'<br>';
+		//echo $chave.'='.$vChaveWeather.'<br>';
 	}
 }//fim while
 

@@ -93,11 +93,13 @@ class Grupos extends Conexao {
 
 		if ($this->zdbtype=='MYSQL') {
 			$res = mysql_query($query);
+			$dbtype_func = "mysql_fetch_array"; //0.3.5
 		} elseif ($this->zdbtype=='POSTGRESQL') { 
 			$res = pg_query($query);
+			$dbtype_func = "pg_fetch_array"; //0.3.5
 		}
 		
-		while ($dados = mysql_fetch_array($res)) {
+		while ($dados = $dbtype_func($res)) {
 			$hostid[]	=	$dados["hostid"];		
 			$host[]		=	$dados["host"];
 			$ip[]		=	$dados["ip"];

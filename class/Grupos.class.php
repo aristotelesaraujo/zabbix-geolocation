@@ -99,7 +99,7 @@ class Grupos extends Conexao {
 			$dbtype_func = "pg_fetch_array"; //0.3.5
 		}
 		
-		while ($dados = $dbtype_func($res)) {
+		while ($dados = $dbtype_func($res)) { //0.3.5
 			$hostid[]	=	$dados["hostid"];		
 			$host[]		=	$dados["host"];
 			$ip[]		=	$dados["ip"];

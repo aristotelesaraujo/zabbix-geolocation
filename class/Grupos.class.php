@@ -81,7 +81,7 @@ class Grupos extends Conexao {
 			$informacao[$i] = rtrim(substr($texto[$i], strpos($texto[$i],'=') + 1));
 		}
 		
-		$query = "SELECT HG.hostgroupid, HG.hostid, HG.groupid, H.host, I.ip, I.dns, HI.location_lat, HI.location_lon 
+		$query = "SELECT DISTINCT HG.hostgroupid, HG.hostid, HG.groupid, H.host, I.ip, I.dns, HI.location_lat, HI.location_lon 
 				  FROM hosts_groups as HG , hosts as H, interface as I, host_inventory as HI
 				  WHERE HG.groupid = ".$grupo." 
 				  AND HG.hostid = H.hostid 

@@ -59,7 +59,7 @@ var oms;
 		
 		if ($hosts->status[$i] == "0") {
 ?>
-			var marker<?=$hosts->hostid[$i]?> = new MarkerWithLabel({
+			var marker<?=$hosts->hostid[$i]?> = new google.maps.Marker({
 					position: new google.maps.LatLng(<?=$hosts->lat[$i]?>, <?=$hosts->lon[$i]?>),
 					map: map,
 					title: "<?=mb_strtoupper($hosts->host[$i],'UTF-8')?>",
@@ -73,7 +73,7 @@ var oms;
 <?php 
 		} else {
 ?>
-			var marker<?=$hosts->hostid[$i]?> = new MarkerWithLabel({
+			var marker<?=$hosts->hostid[$i]?> = new google.maps.Marker({
 				position: new google.maps.LatLng(<?=$hosts->lat[$i]?>, <?=$hosts->lon[$i]?>),
 				map: map,
 				title: "<?=mb_strtoupper($hosts->host[$i],'UTF-8')?>",

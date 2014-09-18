@@ -17,13 +17,14 @@
 ** along with this program; if not, write to the Free Software
 ** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 **
-** Contacts:
-** Leandro Alves Machado - Analista de Sistemas - leandro.machado@sspds.ce.gov.br
-** Aristoteles Araujo - Analista de Sistemas - aristoteles.araujo@sspds.ce.gov.br
+** Contatos:
+** Leandro Alves Machado - Analista de Sistemas - leandroalvesmachado@gmail.com
+** Aristoteles Araujo - Analista de Sistemas - aristoteles.araujo@gmail.com
 **
 **
-** Colaboração: 
+** Colaborações: 
 ** Helder Santana - helder.bs.santana@gmail.com
+** Geovane Correa - geovane_email@yahoo.com.br
 **
 **/
 ?>

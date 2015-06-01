@@ -1,3 +1,11 @@
+Atualizações: 
+
+Geolocalização não possuia controle de usuários, assim um usuário com poucos privilégios poderia acessar todos os grupos que estão cadastrados. Foram criadas novas caracteristícas que permite este controle.
+
+Autor da atualização: Leonardo D. Lauermann <leonardo@inet-ti.com>
+
+Nota: Leonardo a comunidade Zabbix agradeçe a sua colaboração. Viva o software livre!!!! \o/\o/\o/\o/\o/\o/
+
 Geolocalização vrs0.3.3 (versão Tremembé)
 Os tremembés eram originalmente nômades que viviam num território que estendia-se 
 do sul do Maranhão até o Rio Acaraú, no atual estado do Ceará

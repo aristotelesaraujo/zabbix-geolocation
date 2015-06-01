@@ -23,23 +23,35 @@
 ** 
 ** Colaborações:
 ** Jacó Ramos <j4c0r4m0s@gmail.com>
+** Leonardo Lauermann <leonardo@inet-ti.com>
 **
 **/
 ?>
 <?php
-
 class Grupos extends Conexao {
-	
 
 	//Metodo construtor
 	function __construct(){}
-        	
+
 
 	function get_grupos() {
 		
 		$this->conectar();
 
-		$query = "SELECT groupid, name FROM groups ORDER BY groupid ASC";
+		$cookie = $_COOKIE["zbx_sessionid"];
+
+		$query = "SELECT DISTINCT groups.groupid, groups.name from users
+                                join users_groups on users_groups.userid = users.userid
+                                join usrgrp on users_groups.usrgrpid = usrgrp.usrgrpid
+                                join rights on rights.groupid = usrgrp.usrgrpid
+                                join groups on rights.id = groups.groupid
+                                where rights.permission <> 0 and
+                                users_groups.usrgrpid = (SELECT DISTINCT users_groups.usrgrpid from sessions
+                                join users on sessions.userid = users.userid
+                                join users_groups on users_groups.userid = users.userid
+                                where sessions.sessionid = '".$cookie."')
+                                ORDER BY users_groups.usrgrpid ASC";
+
 		if ($this->zdbtype=='MYSQL') {
 			$res = mysql_query($query);
 			while ($dados = mysql_fetch_array($res)) {
@@ -54,6 +66,25 @@ class Grupos extends Conexao {
 			$name[] = strtoupper($dados["name"]);
 			}
 		}
+		// Usuário super admin não possui privilégios cadastrados, necessário realizar select geral
+		if (count($groupid) == 0){
+			$query = "SELECT groupid, name FROM groups ORDER BY groupid ASC";
+		}
+
+		if ($this->zdbtype=='MYSQL') {
+                        $res = mysql_query($query);
+                        while ($dados = mysql_fetch_array($res)) {
+                                $groupid[] = strtoupper($dados["groupid"]);
+                                $name[] = strtoupper($dados["name"]);
+                        }
+
+                } elseif ($this->zdbtype=='POSTGRESQL') {
+                        $res = pg_query($query);
+                        while ($dados = pg_fetch_array($res)) {
+                        $groupid[] = strtoupper($dados["groupid"]);
+                        $name[] = strtoupper($dados["name"]);
+                        }
+                }
 	
 		$grupos = array();
 		

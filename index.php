@@ -46,7 +46,7 @@ $grupo->conectar();
 <!--
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>**/
 -->
-<script src="https://maps.googleapis.com/maps/api/js?v=3.10&sensor=false&libraries=weather"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.26&libraries=weather"></script>
 <script type="text/javascript" src="js/markerwithlabel.js"></script>
 <script type="text/javascript" src="js/markerwithlabel_packed.js"></script>
 <script type="text/javascript" src="js/oms.min.js"></script>
